@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "ng build --aot --prod",
+    "heroku-postbuild": "ng build && mv dist/* ."
   },
   "private": true,
   "dependencies": {
@@ -16,9 +17,7 @@
     "@angular/animations": "~9.0.1",
     "@angular/cli": "^9.1.6",
     "@angular/common": "~9.0.1",
-    "@angular/compiler": "~9.0.1",
     "@angular/compiler-cli": "^9.0.7",
-    "@angular/core": "~9.0.1",
     "@angular/forms": "~9.0.1",
     "@angular/localize": "^9.0.1",
     "@angular/platform-browser": "~9.0.1",
@@ -77,14 +76,14 @@
     "screenfull": "^4.2.0",
     "sweetalert2": "^8.13.0",
     "tinymce": "^4.8.3",
-    "tslib": "^1.10.0",
-    "typescript": "~3.7.5",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.900.2",
+    "@angular-devkit/build-angular": "^0.900.7",
     "@angular/cli": "^9.1.6",
+    "@angular/compiler": "^9.0.7",
     "@angular/compiler-cli": "^9.0.7",
+    "@angular/core": "^9.0.7",
     "@angular/language-service": "~9.0.1",
     "@types/datatables.net": "^1.10.17",
     "@types/datatables.net-buttons": "^1.4.2",
@@ -104,8 +103,9 @@
     "node-sass": "^4.12.0",
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
+    "tslib": "^1.13.0",
     "tslint": "~5.18.0",
-    "typescript": "~3.7.5"
+    "typescript": "^3.7.5"
   },
   "engines": {
     "node": "12.16.2",
